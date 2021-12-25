@@ -6,7 +6,7 @@
 /*   By: gilevro <alexeyrusskikh@protonmail.c       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 18:54:40 by gilevro           #+#    #+#             */
-/*   Updated: 2021/12/25 22:30:49 by gilevro          ###   ########.fr       */
+/*   Updated: 2021/12/25 23:06:08 by gilevro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ struct s_list
 	struct s_list	*next;
 };
 
+/*
 void	list_print(const struct s_list *l)
 {
 	while (l)
@@ -46,6 +47,7 @@ void	list_add_front( struct s_list **old, int64_t value )
 	new_list->next = *old;
 	*old = new_list;
 }
+*/
 
 size_t	list_length( const struct s_list *list )
 {
@@ -64,6 +66,18 @@ size_t	list_length( const struct s_list *list )
 	else
 	{
 		return (0);
+	}
+}
+
+void	list_destroy( struct s_list *list )
+{
+	struct s_list	*temp;
+
+	while (list)
+	{
+		temp = list->next;
+		free(list);
+		list = temp;
 	}
 }
 

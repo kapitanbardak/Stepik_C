@@ -6,7 +6,7 @@
 /*   By: gilevro <alexeyrusskikh@protonmail.c       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 18:54:40 by gilevro           #+#    #+#             */
-/*   Updated: 2021/12/25 22:26:07 by gilevro          ###   ########.fr       */
+/*   Updated: 2021/12/25 22:30:49 by gilevro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,20 @@ size_t	list_length( const struct s_list *list )
 {
 	size_t			size;
 
-	size = 0;
-	while (list->next != NULL)
+	if (list != NULL)
 	{
-		size++;
-		list = list->next;
+		size = 1;
+		while (list->next != NULL)
+		{
+			size++;
+			list = list->next;
+		}
+		return (size);
 	}
-	return (size);
+	else
+	{
+		return (0);
+	}
 }
 
 int	main(void)

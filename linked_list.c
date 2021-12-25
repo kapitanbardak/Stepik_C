@@ -6,7 +6,7 @@
 /*   By: gilevro <alexeyrusskikh@protonmail.c       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 18:54:40 by gilevro           #+#    #+#             */
-/*   Updated: 2021/12/25 21:42:40 by gilevro          ###   ########.fr       */
+/*   Updated: 2021/12/25 21:58:38 by gilevro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,13 @@ struct s_list	*node_create( int64_t value)
 	return (node);
 }
 
-void	list_add_front( struct s_list *old, int64_t value )
+void	list_add_front( struct s_list **old, int64_t value )
 {
 	struct s_list	*new_list;
 
 	new_list = node_create(value);
-	new_list->next = old;
+	new_list->next = *old;
+	*old = new_list;
 }
 
 int	main(void)

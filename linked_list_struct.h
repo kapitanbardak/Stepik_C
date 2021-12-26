@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   linked_list.h                                      :+:      :+:    :+:   */
+/*   linked_list_struct.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gilevro <alexeyrusskikh@protonmail.c       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/26 15:19:36 by gilevro           #+#    #+#             */
-/*   Updated: 2021/12/26 16:56:29 by gilevro          ###   ########.fr       */
+/*   Created: 2021/12/26 16:52:47 by gilevro           #+#    #+#             */
+/*   Updated: 2021/12/26 17:00:42 by gilevro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef LINKED_LIST_H
-# define LINKED_LIST_H
+#ifndef LINKED_LIST_STRUCT_H
+# define LINKED_LIST_STRUCT_H
 
-# include <stdio.h>
-# include <inttypes.h>
-# include <stdlib.h>
-# include "linked_list_struct.h"
-# include "linked_list_change.h"
-# include "linked_list_info.h"
+struct s_list
+{
+	int64_t			value;
+	struct s_list	*next;
+};
 
 #endif

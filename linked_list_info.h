@@ -6,11 +6,17 @@
 /*   By: gilevro <alexeyrusskikh@protonmail.c       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 14:10:55 by gilevro           #+#    #+#             */
-/*   Updated: 2021/12/26 14:34:14 by gilevro          ###   ########.fr       */
+/*   Updated: 2021/12/26 16:59:40 by gilevro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LINKED_LIST_INFO_H
 # define LINKED_LIST_INFO_H
+
+# include <stdio.h>
+# include <inttypes.h>
+# include <stdlib.h>
+# include "linked_list_struct.h"
+# include "linked_list_change.h"
 
 void	list_print(const struct s_list *l)
 {

@@ -6,7 +6,7 @@
 /*   By: gilevro <alexeyrusskikh@protonmail.c       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 15:18:37 by gilevro           #+#    #+#             */
-/*   Updated: 2021/12/26 17:30:45 by gilevro          ###   ########.fr       */
+/*   Updated: 2021/12/27 22:18:18 by gilevro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LINKED_LIST_CHANGE_H
@@ -64,5 +64,22 @@ void	list_add_back(struct s_list **old, int64_t value)
 	{
 		list_add_front(old, value);
 	}
+}
+
+int64_t	list_sum(const struct s_list *list)
+{
+	int64_t	sum;
+
+	sum = 0;
+	if (list != NULL)
+	{
+		sum = sum + list->value;
+		while (list->next != NULL)
+		{
+			list = list->next;
+			sum = sum + list->value;
+		}
+	}
+	return (sum);
 }
 #endif

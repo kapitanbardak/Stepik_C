@@ -60,4 +60,44 @@ struct s_list	*list_reverse(const struct s_list *list)
 	else
 		return (NULL);
 }
+
+struct s_maybe_int64	maybe_read_int64(void)
+{
+	int64_t	num;
+
+	if (scanf("%" SCNd64, &num) == 1)
+	{
+		return (some_int64(num));
+	}
+	else
+		return (g_none_int64);
+}
+
+struct s_list	*list_read(void)
+{
+	struct s_maybe_int64	input;
+	struct s_list			*list;
+	struct s_list			*start;
+	struct s_list			*node;
+
+	list = NULL;
+	start = NULL;
+	input = maybe_read_int64 ();
+	while (input.valid)
+	{
+		node = node_create(input.value);
+		if (list == NULL)
+		{
+			list = node;
+			start = node;
+		}
+		else
+		{
+			list->next = node;
+			list = list->next;
+		}
+		input = maybe_read_int64();
+	}
+	return (start);
+}
 #endif
